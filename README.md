@@ -1,40 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Accessible Pet Adoption Cards
+
+A design system demonstrating production-ready, fully accessible UI components with comprehensive documentation. Built to showcase how pet adoption websites should implement accessibility patterns.
+
+## Overview
+
+This project features two core accessible components (`PetCard` and `PetModal`) with complete keyboard navigation, screen reader support, and ARIA documentation. Each component state is documented with keyboard interactions, screen reader announcements, and focus management patterns.
+
+## Components
+
+- **PetCard** - Accessible card component with interactive and non-interactive states
+- **PetModal** - Modal dialog with focus trapping, keyboard navigation, and focus restoration
+- **StateDocumentation** - Reusable component for documenting accessibility patterns
 
 ## Getting Started
 
-First, run the development server:
+### Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Storybook
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run storybook
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+View components and accessibility documentation at `http://localhost:6006`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run build-storybook
+```
 
-## Learn More
+### Testing
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm test          # Run tests once
+npm run test:watch # Run tests in watch mode
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Tests are written as Storybook `play` functions, testing component interactions, accessibility, and keyboard navigation. Tests run in a browser environment using Vitest + Playwright.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack
 
-## Deploy on Vercel
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Storybook
+- Vitest
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Accessibility Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Full keyboard navigation (Enter, Space, Tab, Escape)
+- Screen reader support with proper ARIA attributes
+- Focus management and trapping
+- Semantic HTML
+- Comprehensive state documentation
