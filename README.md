@@ -1,63 +1,55 @@
-# Accessible Pet Adoption Cards
+## Learning Task: Pet Adoption Form
 
-A design system demonstrating production-ready, fully accessible UI components with comprehensive documentation. Built to showcase how pet adoption websites should implement accessibility patterns.
+**Branch:** `feature/pet-adoption-form`
 
-## Overview
+### Objective
 
-This project features two core accessible components (`PetCard` and `PetModal`) with complete keyboard navigation, screen reader support, and ARIA documentation. Each component state is documented with keyboard interactions, screen reader announcements, and focus management patterns.
+Build an accessible `PetAdoptionForm` component to learn Storybook patterns, form accessibility, and state management.
 
-## Components
+### Requirements
 
-- **PetCard** - Accessible card component with interactive and non-interactive states
-- **PetModal** - Modal dialog with focus trapping, keyboard navigation, and focus restoration
-- **StateDocumentation** - Reusable component for documenting accessibility patterns
+1. **Create the Component** (`src/components/PetAdoptionForm.tsx`)
 
-## Getting Started
+   - Form fields: name, email, phone, adoption reason (textarea)
+   - Submit button
+   - Accessible labels and error messages
 
-### Development
+2. **Create Stories** (`src/stories/PetAdoptionForm.stories.tsx`)
 
-```bash
-npm install
-npm run dev
-```
+   - `Default` - Empty form state
+   - `WithErrors` - Show validation errors
+   - `Submitting` - Loading state during submission
+   - `Success` - Success state after submission
+   - Use `StateDocumentation` to document accessibility
 
-### Storybook
+3. **Accessibility Checklist**
 
-```bash
-npm run storybook
-```
+   - Proper `aria-label` or `<label>` associations
+   - `aria-invalid` and `aria-describedby` for errors
+   - Keyboard navigation (Tab, Enter)
+   - Screen reader announcements for errors
+   - Focus management on submit
 
-View components and accessibility documentation at `http://localhost:6006`
+4. **Storybook Features to Explore**
+   - **Controls** - Make form fields interactive in Storybook
+   - **Actions** - Log form submissions
+   - **Play functions** - Test form interactions
+   - **ArgTypes** - Document props with descriptions
 
-### Build
+### Getting Started
 
-```bash
-npm run build
-npm run build-storybook
-```
+1. Create the component file
+2. Add basic form structure with Tailwind styling
+3. Implement validation logic
+4. Create stories with different states
+5. Add `StateDocumentation` for each story
+6. Write `play` functions to test interactions
 
-### Testing
+### Reference
 
-```bash
-npm test          # Run tests once
-npm run test:watch # Run tests in watch mode
-```
+Look at `PetCard.stories.tsx` and `PetModal.stories.tsx` for patterns on:
 
-Tests are written as Storybook `play` functions, testing component interactions, accessibility, and keyboard navigation. Tests run in a browser environment using Vitest + Playwright.
-
-## Tech Stack
-
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS
-- Storybook
-- Vitest
-
-## Accessibility Features
-
-- Full keyboard navigation (Enter, Space, Tab, Escape)
-- Screen reader support with proper ARIA attributes
-- Focus management and trapping
-- Semantic HTML
-- Comprehensive state documentation
+- Story structure
+- StateDocumentation usage
+- Play function testing
+- Accessibility documentation
